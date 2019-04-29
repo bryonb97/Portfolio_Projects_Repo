@@ -1,0 +1,90 @@
+body,
+html {
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.vl {
+    border-left: 2px solid grey;
+    height: 2 rem;
+}
+
+
+.pokeTypeColor1 {
+    text-align: center;
+    width: 100px;
+    border-radius: 15px;
+}
+
+#pokeDetails {
+    width: 1255px;
+    margin: 0 auto;
+    /* border: blue solid 2px; */
+}
+
+.card--cont {
+    display:inline-block;
+    position: relative;
+}
+
+.pokemonImg {
+    background-color: #242854;
+    height: 20rem;
+    display: inline-block;
+    border-radius: 25px;
+    /* border: 1px solid green; */
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    /* border: 5px solid blue; */
+    perspective: 600px;
+    padding: 5px;
+}
+
+.scene--card {
+    padding-top: 3rem;
+    vertical-align: top;
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+.scene--card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card__face {
+    width: 15rem;
+    height: 15rem;
+    line-height: 260px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    backface-visibility: hidden;
+}
+
+.card__face--front {
+    background: #242854;
+    position: absolute;
+    color: white;
+    padding: 2rem;
+}
+
+.card__face--back {
+    background: #242854;
+    transform: rotateY(180deg);
+    position: relative;
+    font-size: 24px;
+    color: white;
+    border-radius: 25px;
+}

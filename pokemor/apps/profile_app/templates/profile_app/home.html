@@ -1,0 +1,12 @@
+{% extends 'pokedex_app/pokedex_layout.html' %}
+{% block content %}
+    <form id="pokeForm" action="/search_pokemon" method="POST">
+        {% csrf_token %}
+        <br>
+        <div>
+
+        </div>
+    </form>
+    <div id="pokeDetails">
+    </div>
+{% endblock content%}

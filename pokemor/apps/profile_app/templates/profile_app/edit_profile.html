@@ -1,0 +1,22 @@
+<!-- Edit Profile allows the user to edit their profile. Such as email, password, username, profile picture/favorite pokemon -->
+{% extends 'pokedex_app/pokedex_layout.html' %}
+{% block content %}
+
+<div class="card bg-dark text-center rounded" style="margin-top: 12rem; height: 35rem; width: 26rem;">
+    <div class="card bg-light mt-2 p-3" style="height: 34rem; width: 25rem;">
+        <form class="form-signin" action="/user_update/" method="POST">
+            {% csrf_token %}
+            <img class="p-1 mt-n3" src="https://img.icons8.com/color/128/000000/edit-user-male.png">
+            <h2 class="d-inline form-signin-heading">Edit Account</h2>
+            <input type="email" class="form-control mt-5 border-primary" name="reg_email" value="{{user.email}}" />
+            <input type="password" class="form-control mt-5 border-primary" name="reg_password"/>
+            <input type="password" class="form-control mt-5 border-primary" name="reg_confirm_password"
+                placeholder="Confirm Password" />
+            <br>
+            <button class="btn btn-lg btn-dark btn-block mt-4" type="submit">Update Account</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content%}

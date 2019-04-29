@@ -1,0 +1,51 @@
+<!-- Create Profile Page allows the user to Choose a username. -->
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>PokeMor - Create Profile</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- JQuery -->
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js' type='text/javascript'></script>
+    {% load static %}
+    <!-- CSS -->
+    <link rel='stylesheet' href="{% static 'app_name/css/styles.css' %}" type='text/css'>
+    <!-- JavaScript: Django doesn't like this unlesss you create the file -->
+    <script src="{% static '/app_name/script.js' %}" type='text/javascript'></script>
+</head>
+
+<body class="bg-primary">
+        {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <div class="card bg-light border-light rounded mx-auto mt-5 p-3" style="height: 50rem; width: 60rem;">
+        <div class="bg-dark text-white rounded-circle text-center mx-auto mt-3 p-2" style="height: 21rem; width: 21rem;">
+            <div>
+                <img class="mx-auto mt-3" src="https://img.icons8.com/color/256/000000/edit-user-male.png">
+            </div>
+        </div>
+        <form class="form-signin" action="/username_create/" method="POST">
+            {% csrf_token %}
+            <div class="p-5 mx-auto mt-4 text-center" style="width: 45rem;">
+                <h1>Please choose a Username</h1>
+                <input type="text" class="form-control mt-5 border-primary" name="username" placeholder="Username"
+                    required="" />
+                <!-- <p class="text-left mt-2">Check if it is valid: </p> -->
+                <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Create Profile</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>

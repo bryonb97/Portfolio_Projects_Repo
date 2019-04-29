@@ -1,0 +1,25 @@
+{% extends 'pokedex_app/pokedex_layout.html' %}
+{% block content %}
+{% load static %}
+<script src="{% static '/js/poke_search.js' %}" type='text/javascript'></script>
+<form id="pokeForm" action="pokedex/search_pokemon/" method="POST">
+    {% csrf_token %}
+    <div class="mt-5 text-center mx-auto">
+        <div class="input-group mb-3 mx-auto">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Pokemon name or ID</span>
+            </div>
+            <input type="text" class="form-control" id="pokeInput" placeholder="Name/Number"
+                aria-label="Pokemon name or ID" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-primary btn searchBtn" value="Search">Search</button>
+        </div>
+
+
+    </div>
+    </div>
+    <br>
+
+</form>
+<div id="pokeDetails">
+</div>
+{% endblock content%}

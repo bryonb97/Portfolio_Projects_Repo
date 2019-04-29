@@ -1,0 +1,15 @@
+{% extends 'pokedex_app/pokedex_layout.html' %}
+{% load static %}
+<script src="{% static '/js/poke_search.js' %}" type='text/javascript'></script>
+{% block content %}
+{% block pokeGrid %}
+{% load static %}
+        <script src="{% static '/js/main.js' %}" type='text/javascript'></script>
+    {% endblock pokeGrid %}
+    <form id="pokeForm">
+        {% csrf_token %}
+        <br>
+    </form>
+    <div id="pokeDetails">
+    </div>
+{% endblock content%}
